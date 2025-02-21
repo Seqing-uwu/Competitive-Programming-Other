@@ -20,10 +20,10 @@ int main() {
 	cin >> n >> r;
 
   // 數學上 C(n取r) r<0 與 r>n 根本沒意義, 在這邊搞人很有趣?
-	if (r <= 0 || r > n) {
+	if (r < 0 || r > n) {
 		cout << "0\n";
 		return 0;
-	} else if (n == r) {
+	} else if (n == r || r == 0) {
 		cout << "1\n";
 		return 0;
 	}
