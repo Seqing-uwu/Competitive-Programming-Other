@@ -16,36 +16,38 @@ int main() {
     while (cin >> x && x != 0) {
         int p = 1;
         if (x == -2147483648) {
-        	cout << "31\n";
-        	continue;
+            cout << "31\n";
+            continue;
         }
         
         int f = 0;
         if (x<0) f = 1;
         x = abs(x);
 
-		// 質因數分解
+	// 質因數分解
         for (int i = 2; i <= sqrt(x); ++i) {
             if (x % i == 0) {
-				int count = 0;
-				while (x % i == 0) {
-					x /= i;
-					count++;
-				}
-				if (p == 1) {
-					p = count;
-				} else {
-					p = gcd(p, count); // 找GCD
-				}
-			}
+		int count = 0;
+		while (x % i == 0) {
+		    x /= i;
+		    count++;
 		}
-		if (x > 1 && p!= 1) {
+		    
+		if (p == 1) {
+		    p = count;
+		} else {
+		    p = gcd(p, count);
+		}
+	    }
+	}
+	
+	if (x > 1 && p!= 1) {
             p = gcd(p, 1);
         }
         
-		if (f) {
-			while (p % 2 == 0) p /= 2;
-		}
+	if (f) {
+	    while (p % 2 == 0) p /= 2;
+	}
         cout << p << "\n";
     }
     return 0;
