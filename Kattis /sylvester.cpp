@@ -19,8 +19,8 @@ int main() {
 	int t; cin >> t;
 	
 	while (t--) {
-		long long n;
-		int x, y, w, h;
+		long long n, x, y;
+		int w, h;
 		cin >> n >> x >> y >> w >> h;
 		
 		for (long long i=y; i<y+h; i++) {
