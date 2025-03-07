@@ -8,7 +8,7 @@ bool neko(int l, int r, bool removed) {
 		if (s[l] != s[r]) {
 			if (removed) return false;
 			
-			return neko(l+1, r, true) or neko(l, r-1, true);
+			return neko(l+1, r, true) or neko(l, r-1, true); // 刪去 左 或 右 其中一個仍是回文就好
 		}
 		l++; r--;
 	}
