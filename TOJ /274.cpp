@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-string s;
+string s; 
 
 bool neko(int l, int r, bool removed) {
 	while (l < r) {
