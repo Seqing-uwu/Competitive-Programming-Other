@@ -10,6 +10,7 @@ void catchtheGuy(const int &x, const int &g) {
 	
 	for (int i=0; i<g; i+=2) {
 		if (i == g-1) {
+			// 剩下的最後一個就是
 			sus = c[i];
 			break;
 		}
