@@ -17,11 +17,8 @@ int main() {
 	if (r < 0 || r > n) {
 		cout << "0\n";
 		return 0;
-	} else if (n == r || r == 0) { // 這樣比較快 <3
-		cout << "1\n";
-		return 0;
 	}
-
+	
 	cout << C(n, r) << "\n";
 	return 0;
 }
