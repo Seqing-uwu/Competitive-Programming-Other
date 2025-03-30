@@ -11,7 +11,6 @@ int diffs(int n) {
 		}
 		n--;
 	}
-	
 	return a[0];
 }
 
@@ -32,6 +31,5 @@ int main() {
 		
 		cout << diffs(n) << "\n";
 	}
-	
 	return 0;
 }
