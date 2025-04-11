@@ -56,7 +56,7 @@ int found_diffs(int &n, int &m) {
 		if (s[i] != s[i-1]) diffs[0]++;
 	}
 	
-	int max_diff = diffs[0];
+	int res = 0;
 	int l = 1, r = m;
 	while (r < n) {
 		if (s[l-1] == s[r] && s[l-1] == s[l]) {
@@ -71,13 +71,13 @@ int found_diffs(int &n, int &m) {
 			diffs[l] = diffs[l-1] + dif;
 		}
 		
-		if (diffs[l] > max_diff) max_diff = diffs[l];
+		if (diffs[l] == m) res++;
 		
 		l++;
 		r++;
 	}
 	
-	return max_diff;
+	return res;
 }
 
 int main() {
