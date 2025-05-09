@@ -7,6 +7,7 @@ int dq[N]; // 存 pre 的 idx
 int front = 0, back = -1;
 
 int prefix_sum(int n, int k) {
+	// 計算前綴和
 	pre[0] = 0;
 	for (int i=1; i<=n; i++) {
 		pre[i] = pre[i-1] + a[i];
@@ -14,15 +15,18 @@ int prefix_sum(int n, int k) {
 	
 	int ans = 0;
 	for (int i=1; i<=n; i++) {
+		// 移除超出 k 範圍的
 		while (front <= back && dq[front] < i-k) front++;
+		// 計算最大值
 		if (front <= back) {
 			ans = max(ans, pre[i] - pre[dq[front]]);
 		}
+		// 維持單調性
 		while (front <= back && pre[dq[back]] >= pre[i]) back--;
+		// 更新 dq
 		back++;
 		dq[back] = i;
 	}
-	
 	return ans;
 }
 
