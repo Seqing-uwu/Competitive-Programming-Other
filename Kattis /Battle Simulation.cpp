@@ -1,6 +1,8 @@
 // Problem: KATTIS - Battle Simulation
 // Difficultly: 2.2 EASY
 // Tags: #vector
+// Time Complexity: O(N)
+// Space Complexity: O(N)
 
 #include <iostream>
 #include <vector>
